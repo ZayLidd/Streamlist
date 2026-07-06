@@ -1,16 +1,16 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #111827;
+  background-color: #111827;
   color: white;
 }
 
 nav {
-  background: #1f2937;
-  padding: 18px;
+  background-color: #1f2937;
+  padding: 20px;
   display: flex;
-  align-items: center;
   gap: 20px;
+  align-items: center;
 }
 
 nav h2 {
@@ -29,51 +29,85 @@ nav a:hover {
 }
 
 .page {
-  max-width: 700px;
-  margin: 50px auto;
-  background: #374151;
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #374151;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 10px;
   text-align: center;
 }
 
 input {
-  padding: 12px;
+  padding: 10px;
   width: 60%;
+  border-radius: 5px;
   border: none;
-  border-radius: 6px;
   margin-right: 10px;
 }
 
 button {
-  padding: 12px 18px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 6px;
-  background: #facc15;
+  border-radius: 5px;
+  background-color: #facc15;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background: #eab308;
+  background-color: #eab308;
 }
+
 .list {
   list-style: none;
   padding: 0;
 }
 
 .list li {
-  background: #1f2937;
-  margin: 12px 0;
+  background-color: #1f2937;
+  margin: 10px 0;
   padding: 15px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
   align-items: center;
 }
 
-.completed span {
+.completed-text {
   text-decoration: line-through;
-  color: #9ca3af;
+  color: gray;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.movie-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie-card h3 {
+  color: #facc15;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }

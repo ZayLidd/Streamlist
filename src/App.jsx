@@ -40,6 +40,7 @@ function Home() {
     }
 
     const newMovie = {
+      id: Date.now(),
       title: movieName,
       complete: false
     };
@@ -110,7 +111,7 @@ function Home() {
 
       <ul className="list">
         {movies.map((movie, index) => (
-          <li key={index}>
+          <li key={movie.id}>
             <span className={movie.complete ? 'completed-text' : ''}>
               {movie.title}
             </span>
@@ -134,12 +135,13 @@ function Movies() {
   function searchMovies(event) {
     event.preventDefault();
 
-    if (searchText === '') {
+    if (searchText.trim() === '') {
+      alert('Please enter a movie title to search.');
       return;
     }
 
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${searchText}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(searchText)}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -7,3 +7,16 @@ createRoot(document.getElementById("root")).render(
     <App />
   </StrictMode>
 );
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(() => {
+        console.log("StreamList service worker registered.");
+      })
+      .catch((error) => {
+        console.log("Service worker registration failed:", error);
+      });
+  });
+}
